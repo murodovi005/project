@@ -45,9 +45,8 @@ print("Вычисляем b =", b)
 # a = a_1 + a_2
 #
 #
-# def f{x}:
-#     return a
-# print(a)
+f = a
+print(a)
 
 
 
