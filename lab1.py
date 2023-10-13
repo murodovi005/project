@@ -67,17 +67,18 @@ print(ab_1)
 
 
 
-#4
-import math
-k = 2
-alfha = 60
-beta = 30
-gamma = 180 - (alfha+beta)
+def task4():
 
-S1 = 1/2*k**2
-S2 = math.sin(alfha)*math.sin(beta)/math.sin(gamma)
-S = S1 * S2
-print(S)
+    k = 2
+    alfha = 60
+    beta = 30
+    gamma = 180 - (alfha+beta)
+
+    S1 = 1/2*k**2
+    S2 = math.sin(alfha)*math.sin(beta)/math.sin(gamma)
+    S = S1 * S2
+    print(S)
+task4()
 
 
 
