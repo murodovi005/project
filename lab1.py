@@ -66,14 +66,18 @@ print("Вычисляем f(x) =",ab_1)
 print(ab_1)
 
 
+
 #4
-k = 1
+import math
+k = 2
 alfha = 60
 beta = 30
 gamma = 180 - (alfha+beta)
 
-S = 1/2*k*(math
-print(gamma)
+S1 = 1/2*k**2
+S2 = math.sin(alfha)*math.sin(beta)/math.sin(gamma)
+S = S1 * S2
+print(S)
 
 
 
