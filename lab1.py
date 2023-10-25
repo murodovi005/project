@@ -140,6 +140,29 @@ def task7():
     print("Вычисляем y =", y)
 
 task7()
+def task8():
+
+    # Значение данных
+    V1 = 30
+    V2 = 45
+    S1 = 99
+    T1 = 40
+
+    #Формула и вычисления
+    S2 = T1 * (V1+V2)
+
+    print()
+
+task8()
+
+def task9():
+    
+    
+    # Значение данных
+    
+    part_first = 1000
+    part_second = 2000
+    profit = 9000
 
 
 
