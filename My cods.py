@@ -45,3 +45,29 @@ def project3():
         # Создайте задержку в 1 секунду перед следующей итерацией
         time.sleep(5)
 project3()
+
+
+
+
+
+import math
+
+def calculate_area(k, alpha, beta):
+    # перевод градусов в радианы
+    alpha = math.radians(alpha)
+    beta = math.radians(beta)
+    
+    # вычисление высоты треугольника
+    h = k * math.sin(beta)
+    
+    # вычисление площади треугольника
+    area = (k * h) / 2
+    
+    return area
+
+# пример использования функции
+k = 5
+alpha = 45
+beta = 60
+triangle_area = calculate_area(k, alpha, beta)
+print("Площадь треугольника:", triangle_area)
