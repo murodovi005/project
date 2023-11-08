@@ -401,3 +401,27 @@ def run_quiz():
 if __name__ == "__main__":
     print("Добро пожаловать в викторину!")
     run_quiz()
+
+
+
+
+
+
+
+def task2():
+    print('Задание 2')
+    a = 5
+    b = 2
+    c = -5
+    x = float(input("введи x: "))
+
+    # Числительные дроби
+    up = (c * x) ** 0.5
+    down = (b * x) + a
+    # Дробь
+    f_1 = up / down
+    f_2 = x ** b
+
+    f = f_2 + f_1
+    print("{:.4f}".format(f))
+
