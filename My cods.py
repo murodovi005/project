@@ -425,3 +425,154 @@ def task2():
     f = f_2 + f_1
     print("{:.4f}".format(f))
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#Project
+
+import numpy as np
+import math
+from prettytable import PrettyTable
+import matplotlib.pyplot as plt
+import sympy
+
+# Нач. точка, шаг и критерий остановки
+x_n = 1
+y_n = 1
+E = 10e-6
+d = 0.4
+r = 1
+
+
+def make_data():
+    x = np.arange(-2, 2, 0.05)
+    y = np.arange(-2, 2, 0.05)
+    xgrid, ygrid = np.meshgrid(x, y)
+
+    z = xgrid + 2 * ygrid + 4 * np.sqrt(1 + xgrid ** 2 + ygrid ** 2)
+    return xgrid, ygrid, z
+
+
+xx, yy, zz = make_data()
+
+
+def f(x, y):
+    f = x + 2 * y + 4 * np.sqrt(1 + x ** 2 + y ** 2)
+    return f
+
+
+def g(x, y):
+    return 2 * x - y + 5
+
+
+def F(x, y, r):
+    F = f(x, y) + r * np.maximum(-g(x, y), 0) ** 2
+    return F
+
+
+f_n = F(x_n, y_n, r)
+xcoord = np.zeros(9)
+ycoord = np.zeros(9)
+
+
+def search(x, y, f0, d, r):
+    # Исследование
+    for i in range(0, 3):
+        xcoord[i] = x - d
+        ycoord[0] = y - d
+        ycoord[1] = y
+        ycoord[2] = y + d
+    for j in range(3, 6):
+        xcoord[j] = x
+        ycoord[3] = y - d
+        ycoord[4] = y
+        ycoord[5] = y + d
+    for k in range(6, 9):
+        xcoord[k] = x + d
+        ycoord[6] = y - d
+        ycoord[7] = y
+        ycoord[8] = y + d
+
+    if F(x + d, y, r) < f0:
+        f0 = F(x + d, y, r)
+        x += d
+    elif F(x - d, y, r) < f0:
+        f0 = F(x - d, y, r)
+        x -= d
+    if F(x, y + d, r) < f0:
+        f0 = F(x, y + d, r)
+        y += d
+    elif F(x, y - d, r) < f0:
+        f0 = F(x, y - d, r)
+        y -= d
+    if F(x + d, y + d, r) < f0:
+        f0 = F(x + d, y + d, r)
+        y += d
+        x += d
+    elif F(x + d, y - d, r) < f0:
+        f0 = F(x + d, y - d, r)
+        y -= d
+        x += d
+    if F(x - d, y + d, r) < f0:
+        f0 = F(x - d, y + d, r)
+        y += d
+        x -= d
+    elif F(x - d, y - d, r) < f0:
+        f0 = F(x - d, y - d, r)
+        y -= d
+        x -= d
+    return x, y, f0, xcoord, ycoord, r
+
+
+n_iter = 1
+while np.sqrt(2 * d ** 2) > E:
+
+    x, y, f0, xcoord, ycoord, r = search(x_n, y_n, f_n, d, r)
+
+    if f0 == f_n:
+        d /= 2
+    while f0 < f_n:
+        # Образец поиска
+        f_n = f0
+        x_t = x + (x - x_n)
+        y_t = y + (y - y_n)
+        if F(x_t, y_t, r) < f_n:
+            x_n, y_n = x_t, y_t
+        else:
+            x_n, y_n = x, y
+
+        f0 = F(x_n, y_n, r)
+    r *= 10
+    f_n = f0
+    n_iter += 1
+    plt.plot(x_n, y_n, 'b-o')
+    # plt.plot(xcoord, ycoord, 'b*')
+
+print('Точка минимума=', [x_n, y_n])
+print('Значение функции в точке минимума=', f(x_n, y_n))
+print('Количество итераций=', n_iter)
+
+cs = plt.contour(xx, yy, zz, levels=30)
+
+plt.clabel(cs)
+
+plt.show()
