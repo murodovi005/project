@@ -28,7 +28,6 @@ def task1():
     print("Вычисляем a =", a)
     print("Вычисляем b =", b)
 
-
 task1()
 
 
