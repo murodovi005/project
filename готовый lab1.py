@@ -1,6 +1,7 @@
 import math
-def task1():
 
+
+def task1():
     print("Задание №1")
 
     # Значение х у z
@@ -18,13 +19,14 @@ def task1():
     b_2 = (abs(z)) ** 1 / 3
     b_3 = (y) ** 1 / 6
     b = b_1 - b_2 - b_3 + x
-    #Конечный ответ
+    # Конечный ответ
     print("a = {0:.4f} b = {1:.4f}".format(a, b))
 
-task1()
+
+#task1()
+
 
 def task2():
-
     print("Задание №2")
 
     a = float(input("введи a: "))
@@ -47,10 +49,11 @@ def task2():
 
     print("Вычисляем f(x) = {0:.4f} ".format(a))
 
-task2()
+
+# task2()
+
 
 def task3():
-
     print("Задание №3")
 
     x = float(input("введи x: "))
@@ -61,35 +64,37 @@ def task3():
     # Конечный ответ
     print("Вычисляем f(x) = {0:.4f} ".format(ab_1))
 
-task3()
+
+# task3()
+
 
 def task4():
-
     print("Задание №4")
 
     k = float(input("введи сторону К: "))
     alfha = float(input("введи угол альфу: "))
     beta = float(input("введи угол бетту: "))
 
-    #Чтобы найти 3ий угол нужно из 180 минусовать сумма 2 углов
+    # Чтобы найти 3ий угол нужно из 180 минусовать сумма 2 углов
     gamma = 180 - (alfha + beta)
 
     # Числитель дроби
     S1 = 1 / 2 * k ** 2
 
-    #Знаменатель дроби
+    # Знаменатель дроби
     S2 = math.sin(alfha) * math.sin(beta) / math.sin(gamma)
 
-    #Формула такая: S = (a^2/2)*((sinA * sinB)/sinY)
+    # Формула такая: S = (a^2/2)*((sinA * sinB)/sinY)
     S = S1 * S2
 
     # Конечный ответ
     print("S = {0:.4f} ".format(S))
 
-task4()
+
+# task4()
+
 
 def task5():
-
     print("Задание №5")
 
     v1 = float(input("Объёьм первого = : "))
@@ -106,10 +111,11 @@ def task5():
     # Конечный ответ
     print("Вычесляем объём:", v, "Вычесляем температуру:", t)
 
-task5()
+
+# task5()
+
 
 def task6():
-
     print("Задание №6")
 
     # Функция для вычисления расстояния между двумя точками
@@ -135,10 +141,11 @@ def task6():
     # Конечный ответ
     print("Радиус окружности вписанной в треугольник:", radius)
 
-task6()
+
+# task6()
+
 
 def task7():
-
     print("Задание №7")
 
     # Заданные коэффициенты:
@@ -158,10 +165,11 @@ def task7():
     # Конечный ответ
     print("Вычисляем x =", x, "Вычисляем y =", y)
 
-task7()
+
+# task7()
+
 
 def task8():
-
     print("Задание №8")
 
     # Значение данных
@@ -177,21 +185,24 @@ def task8():
     # Конечный ответ
     print(a)
 
-task8()
+
+# task8()
+
 
 def task9():
-
     print("Задание №9")
 
     # Значение данных
-    part_first = 1000
-    part_second = 2000
-    profit = part_second + part_first
-    print(profit)
-    
+    part_first = float(input("Вклад 1: "))
+    part_second = float(input("Вклад 2: "))
+    profit = float(input("Прибыль : "))
+    koeficient = profit /(part_first+part_second)
+    profit_first = part_first * koeficient
+    profit_second = part_second * koeficient
+
+    # Конечный ответ
+    print("Вычисляем 1 ", profit_first)
+    print("Вычисляем 2 ", profit_second)
 
 
-# Вычысление прыбыли пропорционально их вкладам
-# Значение данных
-
-
+task9()
