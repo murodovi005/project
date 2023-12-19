@@ -45,3 +45,28 @@ def task1():
 
 task1()
 
+
+
+
+
+
+
+
+
+
+
+a = input("Введи число:")
+n = int(input("Выбери систему:"))
+
+s = '' # Str
+m = 'ABCDEF' # Massive
+
+while a > 0:
+    с1 = a % n
+    if с1 > 9:
+        s = hex(a)
+    else:
+        s = str(a % n) + s
+        a //= n
+print(s)
+
