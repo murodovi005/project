@@ -1,14 +1,4 @@
 def task1():
-    a = float(input("введи a: "))
-    if a % 2 == 0:
-        print('Четное число')
-    else:
-        print('Нечентное число')
-
-# task1()
-
-
-def task1():
     def numb(b):
         '''1.Определение чётности чисел'''
 
@@ -45,7 +35,8 @@ def task1():
 
 task1()
 
-
+def task2():
+    
 
 
 
