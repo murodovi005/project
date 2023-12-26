@@ -33,6 +33,26 @@ def task1():
 
 #task1()
 
+def task2():
+    import numpy as np
+    import matplotlib.pyplot as plt
+    # Определение функции f(x)
+    def f(x):
+        return np.where(x >= 0, 2*((x**2)-5)-x, np.tan(x)-10)    
+    # Задание диапазона значений x
+    a = -10
+    b = 10
+    # Вычисление значений функции f(x) в заданном диапазоне
+    x = np.linspace(a, b, 100)
+    y = f(x)
+    # Построение графика
+    plt.plot(x, y)
+    plt.xlabel('x')
+    plt.ylabel('f(x)')
+    plt.title('График функции f(x)')
+    plt.grid(True)
+    plt.show()
+#task2()
 def task3():
     def decimal_in_new_numeral_system(number,base):
         input = int(number)
