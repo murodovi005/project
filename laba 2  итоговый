@@ -58,3 +58,21 @@ def task3():
     print("Результат перевода:", result)
 #task3()
 
+import math
+def task5():
+    x = float(input("Введите значение x: "))
+    sin_x = math.sin(x)
+    cos_x_div_x = None
+    ln_x = None
+    if x != 0:
+        cos_x_div_x = math.cos(x) / x
+    if x > 0:
+        ln_x = math.log(x)
+    else:
+        print("ln(x) не имеет смысла для отрицательных значений x.")
+    print("Значение sin(x):", sin_x)
+    if cos_x_div_x is not None:
+        print("Значение (cos(x))/x:", cos_x_div_x)
+    if ln_x is not None:
+        print("Значение ln(x):", ln_x)
+#task5()
