@@ -1,0 +1,22 @@
+def decimal_in_new_numeral_system(number,base):
+    input = int(number)
+    fractional_part = number - input
+    result = ''
+    while input > 0:
+        remainder = input % base
+        result = str(remainder) + result
+        input = input // base
+    if fractional_part > 0:
+        result += '.'
+        i = 0
+        while i < 5:
+            fractional_part *= base
+            digit = int(fractional_part)
+            result += str(digit)
+            fractional_part -= digit
+            i += 1
+    return result
+number = float(input("Введите десятичную дробь: "))
+base = int(input("Введите основание системы счисления: "))
+result = decimal_in_new_numeral_system(number,base)
+print("Результат перевода:", result)
