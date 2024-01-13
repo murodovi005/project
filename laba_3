@@ -1,0 +1,69 @@
+def print_char_list(array):
+    for char in array:
+        print(char)
+def task1():
+    n = int(input("Введите количество символов: "))
+    array = []
+    for i in range(n):
+        char = input("Введите символ: ")
+        array.append(char)
+    print("Введенная последовательность символов:")
+    print_char_list(array)
+    def proverka1(array, symbol):
+        if symbol in array:
+            return True
+        else:
+            return False
+    array = []
+    while True:
+        char = input("Введите символ (для выхода введите 'q'): ")
+        if char == "q":
+            break
+        array.append(char)
+    print("Элементы массива:")
+    print_char_list(array)
+    symbol = input("Введите символ для проверки: ")
+    if proverka1(array, symbol):
+        print("Символ {} входит в последовательность.".format(symbol))
+    else:
+        print("Символ {} не входит в последовательность.".format(symbol))
+    def proverka2(array, first_symbol, second_symbol):
+        count = 0
+        for i in range(len(array) - 1):
+            if array[i] == first_symbol and array[i + 1] == second_symbol:
+                count += 1
+        return count
+    def proverka3(array):
+        count = 0
+        for i in range(len(array) - 1):
+            if array[i] == array[i + 1]:
+                count += 1
+        return count
+    def proverka4(array):
+        n = len(array)
+        for i in range(1, n - 1):
+            for j in range(i + 1, n):
+                if array[i] == array[j] and ord(array[i]) == 83 + 1:
+                    return True
+        return False
+    def proverka5(array):
+        count = 0
+        for char in array:
+            if char == " ":
+                count += 1
+        return count
+    # Пример использования
+    my_array = ['a', 'b', 'c', ' ', 'd', 'e', 'f']
+    print("Элементы массива:")
+    print_char_list(my_array)
+    if proverka4(my_array):
+        print("Существуют такие i и j, что 1 < i < j < n, и s совпадает с st+1")
+    else:
+        print("Нет таких i и j, что 1 < i < j < n, и s совпадает с st+1")
+    spaces_count = proverka5(my_array)
+    print("Количество пробелов в массиве:", spaces_count)
+    def proverka1(array, symbol):
+        if symbol in array:
+            print(f"Символ '{symbol}' входит в последовательность '{array}'")
+        else:
+            print(f"Символ '{symbol}' не входит в последовательность '{array}'")
