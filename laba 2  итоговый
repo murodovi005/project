@@ -96,3 +96,20 @@ def task5():
     if ln_x is not None:
         print("Значение ln(x):", ln_x)
 #task5()
+def task6():
+    def months_to_buy(cost, salary):
+        months = 0
+        current_salary = salary
+        while cost > 0:
+            cost += cost * 0.0315
+            months += 1
+            if months % 3 == 0:
+                current_salary += current_salary * 0.05
+            cost -= current_salary
+        return months
+    cost = int(input("Введите стоимость компьютера: "))
+    salary = int(input("Введите ежемесячную зарплату: "))
+    months = months_to_buy(cost, salary)
+    print("Количество месяцев до покупки: ", months)
+#task6()
+
