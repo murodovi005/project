@@ -113,3 +113,14 @@ def task6():
     print("Количество месяцев до покупки: ", months)
 #task6()
 
+import math
+def task8():
+    x = int(input("Введи х:"))
+    s = 0
+    k1 = int(input())
+    k2 = int(input())
+    for i in range(k1, k2):
+        y = (x ** (2 * i + 1)) / (math.factorial(2 * i + 1))
+        s = s + y
+    print("y = {0:.4f}".format(y))
+task8()
